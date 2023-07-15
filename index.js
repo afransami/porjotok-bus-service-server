@@ -31,7 +31,8 @@ const client = new MongoClient(uri, {
 async function run() {
   try {
    
-    const busCollection = client.db("porjotok-bus-service").collection("bus-list");
+    const busCollection = client.db("porjotok-bus-service").collection("uploadBus");
+    const usersCollection = client.db("porjotok-bus-service").collection("users");
     // const formsCollection = client.db("musicalMingle").collection("addClass");
     // const classCollection = client.db("musicalMingle").collection("selectedClasses");
 
@@ -63,8 +64,8 @@ async function run() {
       })
 
 
-    // upload class 
-      app.post('/bus-list', async (req, res) => {
+    // upload bus details 
+      app.post('/uploadBus', async (req, res) => {
         const bus = req.body
         const result = await busCollection.insertOne(bus)
         res.send(result)
