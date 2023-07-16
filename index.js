@@ -41,6 +41,8 @@ async function run() {
 //  DB_USER=porjotok-bus-service
 //  DB_PASS=D5K0KMEoxgYBUfid
 
+
+// save users email and role in db
     app.put('/users/:email', async (req, res) => {
         const email = req.params.email
         const user = req.body
