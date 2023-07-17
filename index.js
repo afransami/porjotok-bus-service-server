@@ -58,12 +58,19 @@ async function run() {
 
 
        // register/signUp users
-      app.post('/users', async (req, res) => {
-        const saveUser = req.body
-        const result = await usersCollection.insertOne(saveUser)
-        res.send(result)
-        console.log(result)
-      })
+      //  app.post('/users', async (req, res) => {
+      //   const user = req.body;
+      //   const query = {email: user.email}
+      //   const existingUser = await usersCollection.findOne(query);
+      //   if (existingUser){
+      //     console.log('existingUser', existingUser)
+      //     return res.send({message: 'User already exists'})
+      //   }
+        
+      //   const result = await usersCollection.insertOne(user);
+      //   res.send(result) 
+      //   console.log(result); 
+      // })
 
 
     // upload bus details 
