@@ -34,10 +34,8 @@ async function run() {
     const busCollection = client.db("porjotok-bus-service").collection("uploadBus");
     const selectedSeatCollection = client.db("porjotok-bus-service").collection("selected-seat");
     const usersCollection = client.db("porjotok-bus-service").collection("users");
-    // const formsCollection = client.db("musicalMingle").collection("addClass");
-    // const classCollection = client.db("musicalMingle").collection("selectedClasses");
 
- // update/modified/register/signUp users
+
 
 //  DB_USER=porjotok-bus-service
 //  DB_PASS=D5K0KMEoxgYBUfid
