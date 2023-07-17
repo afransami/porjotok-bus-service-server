@@ -32,6 +32,7 @@ async function run() {
   try {
    
     const busCollection = client.db("porjotok-bus-service").collection("uploadBus");
+    const selectedSeatCollection = client.db("porjotok-bus-service").collection("selected-seat");
     const usersCollection = client.db("porjotok-bus-service").collection("users");
     // const formsCollection = client.db("musicalMingle").collection("addClass");
     // const classCollection = client.db("musicalMingle").collection("selectedClasses");
@@ -80,14 +81,22 @@ async function run() {
         res.send(result)
         console.log(result)
       })
+
+      // Booking bus Seats
+      app.post('/selected-seat', async (req, res) => {
+        const seat = req.body
+        const result = await selectedSeatCollection.insertOne(seat)
+        res.send(result)
+        console.log(result)
+      })
       
        // upload instructors 
-       app.post('/instructor', async (req, res) => {
-        const form = req.body
-        console.log(form)
-        const result = await usersCollection.insertOne(form)
-        res.send(result)
-      })
+      //  app.post('/instructor', async (req, res) => {
+      //   const form = req.body
+      //   console.log(form)
+      //   const result = await usersCollection.insertOne(form)
+      //   res.send(result)
+      // })
 
 
        // popular class api 
